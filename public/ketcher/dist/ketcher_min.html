@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ketcher v2.0.0-RC+r</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="logo/favicon.ico">
+	<link rel="icon" type="image/png" sizes="32x32" href="logo/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="logo/favicon-16x16.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="logo/apple-touch-icon.png">
+	<link rel="stylesheet" href="ketcher.css">
+	<style>
+		body {
+			margin: 0;
+		}
+
+		main[role=application] .cellar {
+			display: none;
+		}
+
+		main[role=application] #canvas {
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			border: 0;
+		}
+
+		.measure-log {
+			display: none;
+		}
+
+		main[role=application] [role=toolbar] {
+			display: none;
+		}
+	</style>
+
+</head>
+
+<body role="applicaion">
+	<div role="application"></div>
+	<script>
+		const ketcher_svg_url = "/ketcher/dist/ketcher.svg"
+		const ketcher_api_path = "/api/indigo"
+		// original value ^: 'https://lifescience.opensource.epam.com/v2'
+		// this would potentially expose info through API calls (like the third-party name resolution issue)
+		// TODO Toggle official Indigo use through a configurable setting? Install and run the Dockerized version of Indigo?
+		// Switch to our own API endpoints?
+		const ketcher_tmpllib_baseurl = "/ketcher/dist/"
+		const ketcher_help_url = "ketcher/dist/doc/help.html"
+		const ketcher_logo_url = "ketcher/dist/logo/ketcher-logo.svg"
+	</script>
+	<script src="ketcher.js"></script>
+	<script src="raphael.min.js"></script>
+</body>
+
+</html>

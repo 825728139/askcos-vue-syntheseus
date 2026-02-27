@@ -1,0 +1,43 @@
+[
+  {
+    "smiles": "CC(=O)OC1=CC=CC=C1C(=O)O",
+    "description": "Patented compound - Patent US12345678",
+    "active": true
+  },
+  {
+    "smiles": "C1=CC=CC=C1",
+    "description": "Toxic - Known carcinogen",
+    "active": true
+  },
+  {
+    "smiles": "CCN(CC)CC",
+    "description": "Harmful - Environmental hazard",
+    "active": true
+  },
+  {
+    "smiles": "CCO",
+    "description": "Test entry - Can be deleted",
+    "active": false
+  },
+
+  {
+    "smiles": "CC(=O)O.OCC>>CC(=O)OCC.O",
+    "description": "Esterification (acetic acid + ethanol -> ethyl acetate + water)",
+    "active": true
+  },
+  {
+    "smiles": "C=C.[H][H]>>CC",
+    "description": "Hydrogenation (ethene -> ethane)",
+    "active": true
+  },
+  {
+    "smiles": "CCBr.O>>CCO.Br",
+    "description": "Substitution (bromoethane -> ethanol, simplified)",
+    "active": true
+  },
+  {
+    "smiles": "CC(=O)Cl.N>>CC(=O)N.Cl",
+    "description": "Acylation (acetyl chloride + ammonia -> acetamide, simplified)",
+    "active": true
+  }
+]

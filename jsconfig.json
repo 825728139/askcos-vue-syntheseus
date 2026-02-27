@@ -1,0 +1,26 @@
+{
+  // Pull in the @testing-library/cypress into the 
+  // Cypress environment so the DOM objects
+  // can be searched
+  "include": [
+    "./node_modules/cypress",
+    "cypress/**/*.js"
+  ],
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "baseUrl": "./",
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  }
+}

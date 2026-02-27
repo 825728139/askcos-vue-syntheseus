@@ -1,0 +1,2462 @@
+main[role=application] {
+    /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+}
+
+main[role=application] html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+main[role=application] body {
+    margin: 0
+}
+
+main[role=application] article,
+main[role=application] aside,
+main[role=application] details,
+main[role=application] figcaption,
+main[role=application] figure,
+main[role=application] footer,
+main[role=application] header,
+main[role=application] main,
+main[role=application] menu,
+main[role=application] nav,
+main[role=application] section,
+main[role=application] summary {
+    display: block
+}
+
+main[role=application] audio,
+main[role=application] canvas,
+main[role=application] progress,
+main[role=application] video {
+    display: inline-block
+}
+
+main[role=application] audio:not([controls]) {
+    display: none;
+    height: 0
+}
+
+main[role=application] progress {
+    vertical-align: baseline
+}
+
+main[role=application] [hidden],
+main[role=application] template {
+    display: none
+}
+
+main[role=application] a {
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects
+}
+
+main[role=application] a:active,
+main[role=application] a:hover {
+    outline-width: 0
+}
+
+main[role=application] abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted
+}
+
+main[role=application] b,
+main[role=application] strong {
+    font-weight: inherit
+}
+
+main[role=application] b,
+main[role=application] strong {
+    font-weight: bolder
+}
+
+main[role=application] dfn {
+    font-style: italic
+}
+
+main[role=application] h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+main[role=application] mark {
+    background-color: #ff0;
+    color: #000
+}
+
+main[role=application] small {
+    font-size: 80%
+}
+
+main[role=application] sub,
+main[role=application] sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+main[role=application] sub {
+    bottom: -.25em
+}
+
+main[role=application] sup {
+    top: -.5em
+}
+
+main[role=application] img {
+    border-style: none
+}
+
+main[role=application] svg:not(:root) {
+    overflow: hidden
+}
+
+main[role=application] code,
+main[role=application] kbd,
+main[role=application] pre,
+main[role=application] samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+main[role=application] figure {
+    margin: 1em 40px
+}
+
+main[role=application] hr {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible
+}
+
+main[role=application] button,
+main[role=application] input,
+main[role=application] optgroup,
+main[role=application] select,
+main[role=application] textarea {
+    font: inherit;
+    margin: 0
+}
+
+main[role=application] optgroup {
+    font-weight: 700
+}
+
+main[role=application] button,
+main[role=application] input {
+    overflow: visible
+}
+
+main[role=application] button,
+main[role=application] select {
+    text-transform: none
+}
+
+main[role=application] [type=reset],
+main[role=application] [type=submit],
+main[role=application] button,
+main[role=application] html [type=button] {
+    -webkit-appearance: button
+}
+
+main[role=application] [type=button]::-moz-focus-inner,
+main[role=application] [type=reset]::-moz-focus-inner,
+main[role=application] [type=submit]::-moz-focus-inner,
+main[role=application] button::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+}
+
+main[role=application] [type=button]:-moz-focusring,
+main[role=application] [type=reset]:-moz-focusring,
+main[role=application] [type=submit]:-moz-focusring,
+main[role=application] button:-moz-focusring {
+    outline: 1px dotted ButtonText
+}
+
+main[role=application] fieldset {
+    border: 1px solid silver;
+    margin: 0 2px;
+    padding: .35em .625em .75em
+}
+
+main[role=application] legend {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal
+}
+
+main[role=application] textarea {
+    overflow: auto
+}
+
+main[role=application] [type=checkbox],
+main[role=application] [type=radio] {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0
+}
+
+main[role=application] [type=number]::-webkit-inner-spin-button,
+main[role=application] [type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+main[role=application] [type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+main[role=application] [type=search]::-webkit-search-cancel-button,
+main[role=application] [type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+main[role=application] ::-webkit-input-placeholder {
+    color: inherit;
+    opacity: .54
+}
+
+main[role=application] ::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+
+main[role=application] button,
+main[role=application] input[type=button],
+main[role=application] input[type=reset],
+main[role=application] input[type=submit] {
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: .42em .85em;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+main[role=application] button:focus,
+main[role=application] button:hover,
+main[role=application] input[type=button]:focus,
+main[role=application] input[type=button]:hover,
+main[role=application] input[type=reset]:focus,
+main[role=application] input[type=reset]:hover,
+main[role=application] input[type=submit]:focus,
+main[role=application] input[type=submit]:hover {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+    background-image: linear-gradient(to bottom, #fff, #ededed);
+    outline: 0
+}
+
+main[role=application] button:active,
+main[role=application] input[type=button]:active,
+main[role=application] input[type=reset]:active,
+main[role=application] input[type=submit]:active {
+    outline: 0;
+    background-image: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)
+}
+
+fieldset[disabled] main[role=application] button,
+fieldset[disabled] main[role=application] input[type=button],
+fieldset[disabled] main[role=application] input[type=reset],
+fieldset[disabled] main[role=application] input[type=submit],
+main[role=application] button.disabled,
+main[role=application] button[disabled],
+main[role=application] input[type=button].disabled,
+main[role=application] input[type=button][disabled],
+main[role=application] input[type=reset].disabled,
+main[role=application] input[type=reset][disabled],
+main[role=application] input[type=submit].disabled,
+main[role=application] input[type=submit][disabled] {
+    background-image: none;
+    cursor: not-allowed;
+    opacity: .5;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+main[role=application] button.save-button,
+main[role=application] input[type=button].save-button,
+main[role=application] input[type=reset].save-button,
+main[role=application] input[type=submit].save-button {
+    float: left
+}
+
+main[role=application] button.open-button,
+main[role=application] input[type=button].open-button,
+main[role=application] input[type=reset].open-button,
+main[role=application] input[type=submit].open-button {
+    float: left
+}
+
+main[role=application] button>input[type=file],
+main[role=application] input[type=button]>input[type=file],
+main[role=application] input[type=reset]>input[type=file],
+main[role=application] input[type=submit]>input[type=file] {
+    left: -9999px;
+    position: absolute
+}
+
+main[role=application] button+main[role=application] button,
+main[role=application] button+main[role=application] input[type=button],
+main[role=application] button+main[role=application] input[type=reset],
+main[role=application] button+main[role=application] input[type=submit],
+main[role=application] input[type=button]+main[role=application] button,
+main[role=application] input[type=button]+main[role=application] input[type=button],
+main[role=application] input[type=button]+main[role=application] input[type=reset],
+main[role=application] input[type=button]+main[role=application] input[type=submit],
+main[role=application] input[type=reset]+main[role=application] button,
+main[role=application] input[type=reset]+main[role=application] input[type=button],
+main[role=application] input[type=reset]+main[role=application] input[type=reset],
+main[role=application] input[type=reset]+main[role=application] input[type=submit],
+main[role=application] input[type=submit]+main[role=application] button,
+main[role=application] input[type=submit]+main[role=application] input[type=button],
+main[role=application] input[type=submit]+main[role=application] input[type=reset],
+main[role=application] input[type=submit]+main[role=application] input[type=submit] {
+    margin-left: .3em
+}
+
+main[role=application] input[type=number]:active,
+main[role=application] input[type=number]:focus,
+main[role=application] input[type=search]:active,
+main[role=application] input[type=search]:focus,
+main[role=application] input[type=text]:active,
+main[role=application] input[type=text]:focus,
+main[role=application] select:active,
+main[role=application] select:focus,
+main[role=application] textarea:active,
+main[role=application] textarea:focus {
+    outline: 0
+}
+
+main[role=application] input[type=number]:focus,
+main[role=application] input[type=number]:hover,
+main[role=application] input[type=search]:focus,
+main[role=application] input[type=search]:hover,
+main[role=application] input[type=text]:focus,
+main[role=application] input[type=text]:hover,
+main[role=application] select:focus,
+main[role=application] select:hover,
+main[role=application] textarea:focus,
+main[role=application] textarea:hover {
+    -webkit-box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, .12);
+    box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, .12)
+}
+
+fieldset[disabled] main[role=application] input[type=number],
+fieldset[disabled] main[role=application] input[type=search],
+fieldset[disabled] main[role=application] input[type=text],
+fieldset[disabled] main[role=application] select,
+fieldset[disabled] main[role=application] textarea,
+main[role=application] input[type=number][disabled],
+main[role=application] input[type=number][readonly],
+main[role=application] input[type=search][disabled],
+main[role=application] input[type=search][readonly],
+main[role=application] input[type=text][disabled],
+main[role=application] input[type=text][readonly],
+main[role=application] select[disabled],
+main[role=application] select[readonly],
+main[role=application] textarea[disabled],
+main[role=application] textarea[readonly] {
+    cursor: not-allowed;
+    background: #efefef;
+    opacity: .6
+}
+
+main[role=application] .suggestList {
+    border: 1px solid #3297fd;
+    position: absolute;
+    background-color: #fff;
+    margin-left: 3px;
+    padding-left: 3px;
+    width: 93%;
+    z-index: 3
+}
+
+main[role=application] .suggestList li:hover {
+    background-color: #3297fd;
+    color: #fff
+}
+
+main[role=application] label[data-error] input[type=number],
+main[role=application] label[data-error] input[type=search],
+main[role=application] label[data-error] input[type=text],
+main[role=application] label[data-error] select,
+main[role=application] label[data-error] textarea {
+    border: 1px solid #f55
+}
+
+main[role=application] label[data-error] input[type=number]:focus,
+main[role=application] label[data-error] input[type=number]:hover,
+main[role=application] label[data-error] input[type=search]:focus,
+main[role=application] label[data-error] input[type=search]:hover,
+main[role=application] label[data-error] input[type=text]:focus,
+main[role=application] label[data-error] input[type=text]:hover,
+main[role=application] label[data-error] select:focus,
+main[role=application] label[data-error] select:hover,
+main[role=application] label[data-error] textarea:focus,
+main[role=application] label[data-error] textarea:hover {
+    -webkit-box-shadow: inset 0 0 1px 1px rgba(255, 85, 85, .12);
+    box-shadow: inset 0 0 1px 1px rgba(255, 85, 85, .12)
+}
+
+main[role=application] label[data-error]:hover:after {
+    content: "Error: " attr(data-error);
+    display: block;
+    position: fixed;
+    white-space: pre;
+    padding: .35em;
+    background: #fee;
+    border: 1px solid #f55;
+    border-radius: 4px;
+    line-height: 1em;
+    font-size: .9em;
+    z-index: 2
+}
+
+main[role=application] input[type=checkbox],
+main[role=application] input[type=radio] {
+    vertical-align: middle;
+    margin: 0 .3em;
+    line-height: normal
+}
+
+main[role=application] fieldset {
+    border: 1px solid #ccc;
+    padding: .3em;
+    margin: 0;
+    border-radius: 4px
+}
+
+main[role=application] fieldset>li {
+    display: inline-block
+}
+
+main[role=application] fieldset.-hidden {
+    border-color: transparent;
+    margin-top: 1.5em
+}
+
+main[role=application] legend {
+    color: #8c8c8c;
+    padding: 0 .4em;
+    font-size: .9em;
+    text-align: left
+}
+
+main[role=application] .-SelectList,
+main[role=application] .template-lib .groups,
+main[role=application] input[type=number],
+main[role=application] input[type=search],
+main[role=application] input[type=text],
+main[role=application] select,
+main[role=application] textarea {
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    background: #fff;
+    line-height: 1.42857143;
+    height: 2.4em;
+    padding: .35em .15em .35em .3em;
+    margin: 2px;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.template-lib .groups li {
+    display: block;
+    padding: 0 2px 1px;
+    cursor: default
+}
+
+.template-lib .groups li:hover {
+    background-color: #f2f2f2
+}
+
+.template-lib .groups li.selected {
+    color: #fff;
+    background-color: #9dc2d0
+}
+
+.template-lib .groups li.split {
+    margin-top: 2px;
+    padding-top: 2px;
+    border-top: 1px #ccc solid
+}
+
+main[role=application] .check .tabs,
+main[role=application] .elements-table .tabs {
+    outline: 0
+}
+
+main[role=application] .check .tabs .tabs,
+main[role=application] .elements-table .tabs .tabs {
+    width: 100%
+}
+
+main[role=application] .check .tabs .tabs a,
+main[role=application] .elements-table .tabs .tabs a {
+    padding: 8px 12px;
+    margin-right: 2px;
+    line-height: 14px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0
+}
+
+main[role=application] .check .tabs .tabs a:hover,
+main[role=application] .elements-table .tabs .tabs a:hover {
+    background-color: #9dc2d0
+}
+
+main[role=application] .check .tabs .tabs a.active,
+main[role=application] .elements-table .tabs .tabs a.active {
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    background-color: #fff
+}
+
+main[role=application] form.settings .accordion {
+    margin: .3em
+}
+
+main[role=application] form.settings .accordion .ac_tab {
+    margin-top: 2px
+}
+
+main[role=application] form.settings .accordion .ac_tab>a:first-child {
+    z-index: 3;
+    padding: 6px 0;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    -webkit-transition: border-radius .1s linear;
+    transition: border-radius .1s linear
+}
+
+main[role=application] form.settings .accordion .ac_tab>a:first-child:before {
+    margin-left: 30px;
+    float: left
+}
+
+main[role=application] form.settings .accordion .ac_tab>a:first-child:hover {
+    background-color: #9dc2d0
+}
+
+main[role=application] form.settings .accordion .ac_tab>:nth-child(2) {
+    max-height: 190px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-transition-property: height, padding;
+    transition-property: height, padding;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear
+}
+
+main[role=application] form.settings .accordion .ac_tab.active>a:first-child {
+    border-radius: 6px 6px 0 0;
+    border-bottom: 0;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s
+}
+
+main[role=application] form.settings .accordion .ac_tab.active>a:first-child:before {
+    content: '−'
+}
+
+main[role=application] form.settings .accordion .ac_tab.hidden>a:first-child {
+    border-radius: 6px;
+    -webkit-transition-delay: .4s;
+    transition-delay: .4s
+}
+
+main[role=application] form.settings .accordion .ac_tab.hidden>a:first-child:before {
+    content: '+'
+}
+
+main[role=application] form.settings .accordion .ac_tab.hidden>:nth-child(2) {
+    height: 0;
+    padding: 0;
+    border: 0
+}
+
+main[role=application] #canvas .measure-log {
+    background-color: #fff;
+    border: #ccc 1px solid;
+    border-radius: 0 5px;
+    width: 8em;
+    height: 1.2em;
+    padding: .3em;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s
+}
+
+main[role=application] .ket-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 40;
+    text-align: center;
+    background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%3E%3Cpath%20d%3D%22M0%2010L10%200zm12-2l-4%204zM-2%202l4-4z%22%20stroke%3D%22%23555%22%20stroke-width%3D%222%22%20stroke-opacity%3D%22.02%22%2F%3E%3C%2Fsvg%3E);
+    background-color: rgba(119, 119, 119, .2)
+}
+
+main[role=application] .ket-overlay.animate {
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s
+}
+
+main[role=application] .ket-overlay.hide {
+    background-color: rgba(119, 119, 119, .01)
+}
+
+main[role=application] .ket-overlay:after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle
+}
+
+main[role=application] .ket-overlay form[role=dialog] {
+    outline: 0;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle
+}
+
+main[role=application] .ket-spinner {
+    margin: auto;
+    display: block;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #00f;
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+main[role=application] form[role=dialog] {
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid #999;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    background-clip: padding-box;
+    overflow: visible;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: opacity .3s, -webkit-transform .3s;
+    transition: opacity .3s, -webkit-transform .3s;
+    transition: transform .3s, opacity .3s;
+    transition: transform .3s, opacity .3s, -webkit-transform .3s
+}
+
+main[role=application] form[role=dialog].hide {
+    opacity: .2;
+    -webkit-transform: scale(.5);
+    transform: scale(.5)
+}
+
+main[role=application] form[role=dialog]>* {
+    margin: .3em
+}
+
+main[role=application] form[role=dialog] footer,
+main[role=application] form[role=dialog] header {
+    margin: 0;
+    padding: .2em .6em;
+    background-color: #f5f5f5
+}
+
+main[role=application] form[role=dialog] header {
+    font-size: 1.6em;
+    font-weight: 600;
+    line-height: 1.3;
+    border-bottom: 1px solid #ddd;
+    border-radius: 6px 6px 0 0
+}
+
+main[role=application] form[role=dialog] footer {
+    clear: both;
+    border-top: 1px solid #ddd;
+    border-radius: 0 0 6px 6px;
+    text-align: right
+}
+
+main[role=application] form[role=dialog] .close {
+    padding: 0;
+    border: 0;
+    background: 0 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    position: absolute;
+    top: 0;
+    right: .3em;
+    color: #999;
+    font-size: .8em;
+    font-weight: 700;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5
+}
+
+main[role=application] form[role=dialog] .close:hover {
+    opacity: 1
+}
+
+main[role=application] .template-lib label {
+    position: absolute;
+    right: 0;
+    left: 0;
+    text-align: center;
+    line-height: 2.6em
+}
+
+main[role=application] .template-lib label input[type=search] {
+    float: right;
+    width: 630px
+}
+
+main[role=application] .template-lib .groups {
+    margin-top: 3.5em;
+    height: 27em;
+    width: 11em;
+    float: left;
+    overflow: hidden
+}
+
+main[role=application] .template-lib .table {
+    margin-top: 3.5em;
+    padding: 0;
+    float: left;
+    width: 550px;
+    height: 27em;
+    overflow: auto
+}
+
+main[role=application] .template-lib .tr {
+    height: 120px
+}
+
+main[role=application] .template-lib .td {
+    width: 33%;
+    float: left;
+    height: 100%;
+    position: relative
+}
+
+main[role=application] .template-lib .td:before {
+    position: absolute;
+    z-index: 10;
+    left: .3em;
+    top: 0;
+    padding: 0 4px;
+    border-radius: 3px;
+    font-size: 10px;
+    color: grey;
+    background-color: #fff;
+    content: attr(title)
+}
+
+main[role=application] .template-lib .td.selected .struct {
+    background-color: #d1e2e9
+}
+
+main[role=application] .template-lib .attach-button {
+    margin: 0 4px 2px 0;
+    position: absolute;
+    bottom: 0;
+    right: 0
+}
+
+main[role=application] .template-lib .struct {
+    position: absolute;
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 1em;
+    width: 98%;
+    height: 98%;
+    border: 1px solid #ccc;
+    border-radius: 5px
+}
+
+main[role=application] .template-lib .struct:hover {
+    background: #f2f2f2
+}
+
+main[role=application] .template-lib div.struct {
+    padding: 0
+}
+
+main[role=application] form.bond label {
+    text-align: right;
+    display: block
+}
+
+main[role=application] form.bond select {
+    width: 12em
+}
+
+main[role=application] form.atom-props fieldset {
+    margin-top: .7em;
+    text-align: right
+}
+
+main[role=application] form.atom-props fieldset label {
+    margin: .3em 0;
+    display: inline-block
+}
+
+main[role=application] form.atom-props .main {
+    width: 14.5em;
+    float: left
+}
+
+main[role=application] form.atom-props .main input {
+    width: 8em
+}
+
+main[role=application] form.atom-props .query,
+main[role=application] form.atom-props .reaction {
+    float: right;
+    clear: right;
+    width: 16em
+}
+
+main[role=application] form.atom-props .query input[type=checkbox],
+main[role=application] form.atom-props .reaction input[type=checkbox] {
+    margin: .6em .3em
+}
+
+main[role=application] form.attach-points form {
+    width: 17em;
+    text-align: right
+}
+
+main[role=application] form.attach-points form label {
+    margin: 1.03333333em;
+    display: inline-block
+}
+
+main[role=application] form.automap {
+    width: 22em
+}
+
+main[role=application] form.automap label {
+    display: block;
+    text-align: right;
+    line-height: 3.1em
+}
+
+main[role=application] form.rgroup-logic label {
+    display: inline-block;
+    text-align: right;
+    line-height: 3.1em
+}
+
+main[role=application] form.rgroup-logic .cond {
+    display: block
+}
+
+main[role=application] form.rgroup-logic input[type=text] {
+    width: 7em
+}
+
+main[role=application] .sgroup,
+main[role=application] .sgroup-special {
+    width: 20em
+}
+
+main[role=application] .sgroup label,
+main[role=application] .sgroup-special label {
+    display: block;
+    text-align: right
+}
+
+main[role=application] .sgroup label input,
+main[role=application] .sgroup label select,
+main[role=application] .sgroup-special label input,
+main[role=application] .sgroup-special label select {
+    width: 10em
+}
+
+main[role=application] .sgroup label:hover:after,
+main[role=application] .sgroup-special label:hover:after {
+    margin: 1px 0 0 3px
+}
+
+main[role=application] .sgroup fieldset,
+main[role=application] .sgroup-special fieldset {
+    border: 0;
+    padding: 0
+}
+
+main[role=application] .sgroup .data label,
+main[role=application] .sgroup-special .data label {
+    text-align: left
+}
+
+main[role=application] .sgroup .data label fieldset.radio label,
+main[role=application] .sgroup-special .data label fieldset.radio label {
+    margin: .4em;
+    display: inline-block
+}
+
+main[role=application] .sgroup .data label fieldset.radio input[type=radio],
+main[role=application] .sgroup-special .data label fieldset.radio input[type=radio] {
+    width: auto
+}
+
+main[role=application] .sgroup .data select[name=fieldValue],
+main[role=application] .sgroup .data textarea,
+main[role=application] .sgroup-special .data select[name=fieldValue],
+main[role=application] .sgroup-special .data textarea {
+    display: block;
+    width: 19em;
+    height: 12em;
+    overflow: auto
+}
+
+main[role=application] .sgroup .data input[type=text],
+main[role=application] .sgroup .data select[name=fieldName],
+main[role=application] .sgroup-special .data input[type=text],
+main[role=application] .sgroup-special .data select[name=fieldName] {
+    width: 19em;
+    display: block;
+    margin-bottom: 0
+}
+
+main[role=application] form.settings {
+    width: 35em
+}
+
+main[role=application] form.settings .save-button {
+    margin-left: 10px
+}
+
+main[role=application] form.settings .warning {
+    margin: .3em
+}
+
+main[role=application] form.settings .accordion fieldset {
+    border-radius: 0 0 6px 6px;
+    height: 12.4em
+}
+
+main[role=application] form.settings .accordion fieldset.server {
+    height: 15.5em
+}
+
+main[role=application] form.settings .accordion fieldset.miew {
+    height: 9.3em
+}
+
+main[role=application] form.settings .accordion fieldset.render {
+    height: 24.8em
+}
+
+main[role=application] form.settings .accordion label {
+    display: block;
+    text-align: right;
+    line-height: 3.1em;
+    height: 3.1em
+}
+
+main[role=application] form.settings .accordion label input,
+main[role=application] form.settings .accordion label select {
+    width: 50%
+}
+
+main[role=application] form.settings .accordion label div {
+    margin: 2px;
+    width: 50%
+}
+
+main[role=application] form.settings .accordion label div input {
+    margin: 0 4px 0 0
+}
+
+main[role=application] form.settings .accordion label div select {
+    margin: 0
+}
+
+main[role=application] form.settings .accordion label:hover:after {
+    left: 50%
+}
+
+main[role=application] .about {
+    width: 25em
+}
+
+main[role=application] .about>a {
+    display: block;
+    margin: 2em 1em
+}
+
+main[role=application] .about var {
+    margin-left: .5em;
+    font-style: normal;
+    font-weight: 700;
+    display: inline-block
+}
+
+main[role=application] .about time {
+    font-style: italic
+}
+
+main[role=application] .about a {
+    color: #1a7090
+}
+
+main[role=application] .about a:hover {
+    color: #5e5e5e
+}
+
+main[role=application] .about dl {
+    position: relative;
+    margin: 0 1em 1em;
+    vertical-align: bottom;
+    line-height: 1.4em
+}
+
+main[role=application] .about dd {
+    text-align: right;
+    margin-bottom: .5em
+}
+
+main[role=application] .about dt+dd {
+    margin: -1.4em 0 0
+}
+
+main[role=application] .rgroup ul {
+    width: 25.6em;
+    padding: .5em
+}
+
+main[role=application] .rgroup li {
+    display: inline-block;
+    margin: .2em .1em
+}
+
+main[role=application] .rgroup form button {
+    font-size: 1.3em;
+    width: 2.3em;
+    height: 2em;
+    line-height: 1;
+    vertical-align: middle;
+    padding: .15em;
+    background: inherit
+}
+
+main[role=application] .rgroup form button:first-letter {
+    font-weight: 600;
+    color: #666
+}
+
+main[role=application] .rgroup form button:hover {
+    -webkit-transition: .2s, ease-out, -webkit-transform;
+    transition: .2s, ease-out, -webkit-transform;
+    transition: transform, .2s, ease-out;
+    transition: transform, .2s, ease-out, -webkit-transform;
+    -webkit-transform: scale(1.005);
+    transform: scale(1.005);
+    -webkit-box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, .12);
+    box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, .12)
+}
+
+main[role=application] .rgroup form button:active {
+    -webkit-transition: .2s, ease-out, -webkit-transform;
+    transition: .2s, ease-out, -webkit-transform;
+    transition: transform, .2s, ease-out;
+    transition: transform, .2s, ease-out, -webkit-transform;
+    -webkit-transform: scale(none);
+    transform: scale(none);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+main[role=application] .rgroup form button.selected {
+    background: #444;
+    color: #fff
+}
+
+main[role=application] .rgroup form button.selected>span {
+    color: #fff
+}
+
+main[role=application] .rgroup form button.selected>svg {
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 5
+}
+
+main[role=application] .rgroup form button.selected:first-letter {
+    color: #b3b3b3
+}
+
+main[role=application] .elements-table {
+    width: 57em
+}
+
+main[role=application] .elements-table .tabs .tabs-content {
+    height: 31em
+}
+
+main[role=application] .elements-table .period-table {
+    position: relative
+}
+
+main[role=application] .elements-table .period-table table {
+    position: relative
+}
+
+main[role=application] .elements-table .period-table td,
+main[role=application] .elements-table .period-table th {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle
+}
+
+main[role=application] .elements-table .period-table td.ref,
+main[role=application] .elements-table .period-table th {
+    opacity: .6;
+    font-weight: 400;
+    font-size: .8em;
+    padding: .3em .8em
+}
+
+main[role=application] .elements-table .period-table th.ref {
+    vertical-align: top;
+    text-align: right
+}
+
+main[role=application] .elements-table .period-table tr:nth-of-type(8) {
+    border-bottom: 1em solid transparent
+}
+
+main[role=application] .elements-table .period-table .ket-atom-info {
+    position: absolute;
+    padding: .75em .75em;
+    left: 18em;
+    top: 2em;
+    width: 7em;
+    -webkit-box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, .12);
+    box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, .12);
+    opacity: 1;
+    -webkit-transition: opacity 1s, visibility 0s;
+    transition: opacity 1s, visibility 0s
+}
+
+main[role=application] .elements-table .period-table .ket-atom-info.none {
+    opacity: 0;
+    -webkit-transition: opacity 2s, visibility 2s;
+    transition: opacity 2s, visibility 2s
+}
+
+main[role=application] .elements-table .period-table button {
+    font-size: 1.3em;
+    width: 2em;
+    height: 2em;
+    line-height: 2;
+    vertical-align: middle;
+    padding: .15em;
+    margin: 1px;
+    border: 0;
+    display: block;
+    position: relative
+}
+
+main[role=application] .elements-table .period-table button:after {
+    position: absolute;
+    opacity: .6;
+    top: .3em;
+    right: .3em;
+    font-size: .5em;
+    line-height: 1;
+    vertical-align: top;
+    content: attr(value)
+}
+
+main[role=application] .elements-table .period-table button.selected:after,
+main[role=application] .elements-table .period-table button:hover:after {
+    visibility: hidden
+}
+
+main[role=application] .elements-table .period-table button:not(:hover)>span {
+    color: #000
+}
+
+main[role=application] .elements-table .period-table button:hover {
+    -webkit-transition: .2s, ease-out, -webkit-transform;
+    transition: .2s, ease-out, -webkit-transform;
+    transition: transform, .2s, ease-out;
+    transition: transform, .2s, ease-out, -webkit-transform;
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+    -webkit-box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, .12);
+    box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, .12);
+    z-index: 60;
+    background: #fff
+}
+
+main[role=application] .elements-table .period-table button:active {
+    -webkit-transition: .2s, ease-out, -webkit-transform;
+    transition: .2s, ease-out, -webkit-transform;
+    transition: transform, .2s, ease-out;
+    transition: transform, .2s, ease-out, -webkit-transform;
+    -webkit-transform: scale(none);
+    transform: scale(none);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+main[role=application] .elements-table .period-table button.selected {
+    background: #444;
+    color: #fff
+}
+
+main[role=application] .elements-table .period-table button.selected>span {
+    color: #fff
+}
+
+main[role=application] .elements-table .period-table button.selected>svg {
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 5
+}
+
+main[role=application] .elements-table .period-table fieldset {
+    border: 0;
+    padding: .5em;
+    margin: .5em 0 0 1.5em
+}
+
+main[role=application] .elements-table .period-table .diatomic {
+    background: #e7ff8f
+}
+
+main[role=application] .elements-table .period-table .noble {
+    background: #c0ffff
+}
+
+main[role=application] .elements-table .period-table .alkali {
+    background: #f66
+}
+
+main[role=application] .elements-table .period-table .alkaline-earth {
+    background: #ffdead
+}
+
+main[role=application] .elements-table .period-table .metalloid {
+    background: #cc9
+}
+
+main[role=application] .elements-table .period-table .polyatomic {
+    background: #a1ffc3
+}
+
+main[role=application] .elements-table .period-table .post-transition {
+    background: #ccc
+}
+
+main[role=application] .elements-table .period-table .transition {
+    background: #ffc0c0
+}
+
+main[role=application] .elements-table .period-table .lanthanide {
+    background: #ffbfff
+}
+
+main[role=application] .elements-table .period-table .actinide {
+    background: #f9c
+}
+
+main[role=application] .elements-table .period-table .unknown-props {
+    background: #e8e8e8
+}
+
+main[role=application] .elements-table .period-table .unknown-state:after {
+    color: #222
+}
+
+main[role=application] .elements-table .period-table .solid:after {
+    color: #222
+}
+
+main[role=application] .elements-table .period-table .metal:after {
+    color: #006
+}
+
+main[role=application] .elements-table .period-table .gas:after {
+    color: #c00
+}
+
+main[role=application] .elements-table .period-table .liquid:after {
+    color: #0a0
+}
+
+main[role=application] .elements-table .generic-groups {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    padding: 1.5em 0
+}
+
+main[role=application] .elements-table .generic-groups .col:first-child {
+    width: 40%
+}
+
+main[role=application] .elements-table .generic-groups .col>fieldset {
+    margin: 1em;
+    padding: 1em .5em
+}
+
+main[role=application] .elements-table .generic-groups .acyclic,
+main[role=application] .elements-table .generic-groups .atom>fieldset,
+main[role=application] .elements-table .generic-groups .cyclic {
+    display: inline-block;
+    vertical-align: top
+}
+
+main[role=application] .elements-table .generic-groups .acyclic+fieldset,
+main[role=application] .elements-table .generic-groups .atom>fieldset+fieldset,
+main[role=application] .elements-table .generic-groups .cyclic+fieldset {
+    margin-left: .4em
+}
+
+main[role=application] .elements-table .generic-groups .carbo,
+main[role=application] .elements-table .generic-groups .cyclic>fieldset,
+main[role=application] .elements-table .generic-groups .hetero {
+    float: left
+}
+
+main[role=application] .elements-table .generic-groups .carbo {
+    clear: both;
+    margin-right: .4em
+}
+
+main[role=application] .elements-table .generic-groups .cyclic>legend+fieldset {
+    margin: 0 .4em 0 .8em
+}
+
+main[role=application] .elements-table .generic-groups fieldset {
+    text-align: center
+}
+
+main[role=application] .elements-table .generic-groups .atom fieldset,
+main[role=application] .elements-table .generic-groups .carbo fieldset,
+main[role=application] .elements-table .generic-groups .hetero fieldset,
+main[role=application] .elements-table .generic-groups .no-carbon,
+main[role=application] .elements-table .generic-groups legend+fieldset {
+    position: relative;
+    border: 0;
+    padding: 0 0 1em
+}
+
+main[role=application] .elements-table .generic-groups .atom fieldset legend,
+main[role=application] .elements-table .generic-groups .carbo fieldset legend,
+main[role=application] .elements-table .generic-groups .hetero fieldset legend,
+main[role=application] .elements-table .generic-groups .no-carbon legend,
+main[role=application] .elements-table .generic-groups legend+fieldset legend {
+    font-size: .7em;
+    bottom: .1em;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute
+}
+
+main[role=application] .elements-table .generic-groups button {
+    font-size: 1.1em;
+    height: 2em;
+    width: 2.5em;
+    line-height: 1;
+    vertical-align: middle;
+    padding: .15em;
+    background: inherit
+}
+
+main[role=application] .elements-table .generic-groups button:hover {
+    -webkit-transition: .2s, ease-out, -webkit-transform;
+    transition: .2s, ease-out, -webkit-transform;
+    transition: transform, .2s, ease-out;
+    transition: transform, .2s, ease-out, -webkit-transform;
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+    -webkit-box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, .12);
+    box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, .12)
+}
+
+main[role=application] .elements-table .generic-groups button:active {
+    -webkit-transition: .2s, ease-out, -webkit-transform;
+    transition: .2s, ease-out, -webkit-transform;
+    transition: transform, .2s, ease-out;
+    transition: transform, .2s, ease-out, -webkit-transform;
+    -webkit-transform: scale(none);
+    transform: scale(none);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+main[role=application] .elements-table .generic-groups button.selected {
+    background: #444;
+    color: #fff
+}
+
+main[role=application] .elements-table .generic-groups button.selected>span {
+    color: #fff
+}
+
+main[role=application] .elements-table .generic-groups button.selected>svg {
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 5
+}
+
+main[role=application] .recognize .change-version {
+    display: block;
+    text-align: right
+}
+
+main[role=application] .recognize .output,
+main[role=application] .recognize .picture {
+    height: 25em;
+    width: 21em;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center
+}
+
+main[role=application] .recognize .struct,
+main[role=application] .recognize img {
+    overflow: hidden;
+    position: relative;
+    max-height: 100%;
+    max-width: 21em
+}
+
+main[role=application] .recognize label {
+    display: block
+}
+
+main[role=application] .recognize .open-filename {
+    display: inline-block;
+    float: left;
+    padding: 6px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+main[role=application] .check fieldset {
+    margin: 0;
+    padding: 0 0 .3em .3em;
+    overflow-y: auto;
+    height: 25em;
+    width: 25em;
+    border-color: #ddd;
+    border-radius: 0 4px 4px 4px
+}
+
+main[role=application] .check fieldset li {
+    display: block;
+    margin: 1.1em 0 .3em .3em
+}
+
+main[role=application] .check fieldset dt {
+    font-weight: 700;
+    margin: 1.1em 0 .3em .3em
+}
+
+main[role=application] .check fieldset dd {
+    margin-left: 1.5em
+}
+
+main[role=application] .analyse label {
+    width: 10em;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1em
+}
+
+main[role=application] .analyse input[type=text] {
+    width: 14em;
+    margin-right: 1em
+}
+
+main[role=application] .analyse select {
+    width: 10em;
+    margin: 0
+}
+
+main[role=application] .analyse .chem-input {
+    width: 14em;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+main[role=application] .analyse .chem-input:active,
+main[role=application] .analyse .chem-input:focus {
+    outline: 0;
+    -webkit-box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, .12);
+    box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, .12)
+}
+
+main[role=application] .open label {
+    display: block;
+    width: 22.5em
+}
+
+main[role=application] .open label input {
+    margin-bottom: .1em
+}
+
+main[role=application] .open textarea {
+    min-width: 32em;
+    min-height: 23em;
+    overflow: auto;
+    white-space: pre;
+    resize: both
+}
+
+main[role=application] .save form>label {
+    display: inline-block;
+    text-align: right;
+    margin: 0 .3em
+}
+
+main[role=application] .save form>label input,
+main[role=application] .save form>label select {
+    width: 12.25em
+}
+
+main[role=application] .save textarea {
+    display: block;
+    min-width: 34em;
+    min-height: 23em;
+    overflow: auto;
+    white-space: pre;
+    cursor: text;
+    resize: both
+}
+
+main[role=application] .help {
+    overflow: auto;
+    min-height: 500px;
+    min-width: 800px;
+    border: 0
+}
+
+main[role=application] .miew .warning {
+    display: inline-block;
+    float: left;
+    line-height: 2em
+}
+
+main[role=application] .miew .atom-info {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 4px;
+    color: silver;
+    background-color: rgba(64, 64, 64, .75);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: left;
+    -ms-flex-align: left;
+    align-items: left;
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
+    justify-content: left;
+    opacity: 0
+}
+
+main[role=application] .miew .atom-info p {
+    margin: 10px;
+    text-align: left
+}
+
+main[role=application] .attach label {
+    display: block;
+    padding: 0 5px;
+    font-size: 16px
+}
+
+main[role=application] .attach .warning {
+    padding: 0 5px
+}
+
+main[role=application] .attach .editor {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    height: 25em;
+    max-width: 30em;
+    overflow: auto
+}
+
+[role=application] {
+    width: 800px;
+    height: 432px
+}
+
+main[role=application] {
+    position: relative;
+    font: 14px FreeSans, Arimo, "Droid Sans", Helvetica, "Helvetica Neue", Arial, sans-serif;
+    background-color: #fff;
+    color: #333
+}
+
+main[role=application] form.settings .accordion .ac_tab fieldset {
+    -webkit-box-sizing: unset;
+    box-sizing: unset
+}
+
+main[role=application] form.settings .accordion label {
+    margin-bottom: unset
+}
+
+main[role=application] legend {
+    width: unset
+}
+
+main[role=application] .elements-table .generic-groups .col {
+    -ms-flex-preferred-size: unset;
+    flex-basis: unset
+}
+
+main[role=application] li,
+main[role=application] menu,
+main[role=application] ul {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+main[role=application] #canvas {
+    position: absolute;
+    border: #ccc 1px solid;
+    border-radius: 5px;
+    overflow: auto;
+    top: 45px;
+    left: 45px;
+    right: 45px;
+    bottom: 45px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+main[role=application] #canvas .measure-log {
+    top: 45px;
+    right: 45px
+}
+
+main[role=application] #canvas .measure-log {
+    position: fixed
+}
+
+main[role=application] #canvas .measure-log.visible {
+    opacity: 1
+}
+
+main[role=application] #mainmenu {
+    position: absolute;
+    top: 3px;
+    left: 45px;
+    right: 45px;
+    height: 40px
+}
+
+main[role=application] #mainmenu>menu {
+    width: 100%
+}
+
+main[role=application] #elements {
+    position: absolute;
+    right: 3px;
+    top: 45px;
+    bottom: 45px;
+    width: 40px
+}
+
+main[role=application] #elements>menu {
+    height: 100%
+}
+
+main[role=application] #template {
+    position: absolute;
+    bottom: 3px;
+    left: 45px;
+    right: 45px;
+    height: 40px
+}
+
+main[role=application] #template>menu {
+    width: 100%
+}
+
+main[role=application] #template>menu {
+    overflow: hidden
+}
+
+main[role=application] #toolbox {
+    position: absolute;
+    left: 3px;
+    top: 45px;
+    bottom: 45px;
+    width: 40px
+}
+
+main[role=application] #toolbox>menu {
+    height: 100%
+}
+
+main[role=application] #meta {
+    position: absolute;
+    right: 0
+}
+
+main[role=application] #chiral-flag {
+    overflow-y: hidden;
+    position: absolute;
+    right: 0
+}
+
+main[role=application] #chiral-flag>button {
+    width: 64px;
+    margin-left: 8px;
+    margin-right: 8px
+}
+
+main[role=application] #chiral-flag>button>svg {
+    stroke-width: 0
+}
+
+main[role=application] #chiral-flag>button>svg {
+    position: static;
+    left: 0;
+    top: 0;
+    width: 52px
+}
+
+main[role=application] [role=toolbar] {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+main[role=application] [role=toolbar] menu {
+    font-size: .00001px;
+    -webkit-text-size-adjust: none
+}
+
+main[role=application] [role=toolbar] li {
+    display: inline-block;
+    vertical-align: top
+}
+
+main[role=application] [role=toolbar] li>svg {
+    fill: #333;
+    display: none
+}
+
+main[role=application] [role=toolbar] button {
+    display: block;
+    border: 0;
+    padding: 0;
+    position: relative;
+    background: inherit;
+    background-color: #fff;
+    width: 32px;
+    height: 32px;
+    margin: 4px
+}
+
+main[role=application] [role=toolbar] button:after,
+main[role=application] [role=toolbar] button:before {
+    display: inline-block;
+    vertical-align: middle
+}
+
+main[role=application] [role=toolbar] button:after {
+    position: absolute;
+    left: 0
+}
+
+main[role=application] [role=toolbar] button:hover {
+    -webkit-transition: .2s, ease-out, -webkit-transform;
+    transition: .2s, ease-out, -webkit-transform;
+    transition: transform, .2s, ease-out;
+    transition: transform, .2s, ease-out, -webkit-transform;
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+    -webkit-box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, .12);
+    box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, .12)
+}
+
+main[role=application] [role=toolbar] button:active,
+main[role=application] [role=toolbar] button[disabled] {
+    -webkit-transition: .2s, ease-out, -webkit-transform;
+    transition: .2s, ease-out, -webkit-transform;
+    transition: transform, .2s, ease-out;
+    transition: transform, .2s, ease-out, -webkit-transform;
+    -webkit-transform: scale(none);
+    transform: scale(none);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+main[role=application] [role=toolbar] button>svg {
+    position: absolute;
+    top: .1em;
+    left: .1em;
+    font-size: 26px;
+    width: 26px;
+    height: 26px;
+    fill: #333
+}
+
+main[role=application] [role=toolbar] .selected button {
+    background: #444;
+    color: #fff
+}
+
+main[role=application] [role=toolbar] .selected button>span {
+    color: #fff
+}
+
+main[role=application] [role=toolbar] .selected button>svg {
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 5
+}
+
+main[role=application] [role=toolbar] kbd {
+    display: none;
+    font: .8em monospace;
+    color: #ccc
+}
+
+main[role=application] .cliparea {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    display: block;
+    font-size: 1px;
+    z-index: -1;
+    color: transparent;
+    background: 0 0;
+    overflow: hidden;
+    border: none;
+    padding: 0;
+    resize: none;
+    outline: 0;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text
+}
+
+main[role=application] li.opened>menu {
+    margin: 0 !important;
+    position: absolute;
+    left: 47px;
+    z-index: 20;
+    white-space: nowrap;
+    word-break: keep-all;
+    padding: 2px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175)
+}
+
+main[role=application] li.opened>menu li+li>menu {
+    margin-top: 3px;
+    border-top: 1px solid #ccc;
+    padding-top: 2px
+}
+
+main[role=application] #atom button,
+main[role=application] #freq-atoms button {
+    font-size: 19px
+}
+
+main[role=application] #atom kbd,
+main[role=application] #freq-atoms kbd {
+    display: none
+}
+
+main[role=application] select {
+    font-size: 14px
+}
+
+main[role=application] #bond-common,
+main[role=application] #bond-query,
+main[role=application] #bond-stereo,
+main[role=application] #reaction,
+main[role=application] #select {
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    width: 100%
+}
+
+main[role=application] #bond-common>svg,
+main[role=application] #bond-query>svg,
+main[role=application] #bond-stereo>svg,
+main[role=application] #reaction>svg,
+main[role=application] #select>svg {
+    display: block;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    right: 0;
+    bottom: 0
+}
+
+main[role=application] #bond-common:hover>svg,
+main[role=application] #bond-query:hover>svg,
+main[role=application] #bond-stereo:hover>svg,
+main[role=application] #reaction:hover>svg,
+main[role=application] #select:hover>svg {
+    fill: #1a7090
+}
+
+main[role=application] #bond-common.opened,
+main[role=application] #bond-query.opened,
+main[role=application] #bond-stereo.opened,
+main[role=application] #reaction.opened,
+main[role=application] #select.opened {
+    overflow: visible
+}
+
+main[role=application] #zoom-in,
+main[role=application] #zoom-out {
+    display: none
+}
+
+main[role=application] #bond-common,
+main[role=application] #bond-query,
+main[role=application] #bond-stereo {
+    height: 32px;
+    width: 100%
+}
+
+main[role=application] #rgroup {
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    width: 100%
+}
+
+main[role=application] #rgroup>svg {
+    display: block;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    right: 0;
+    bottom: 0
+}
+
+main[role=application] #rgroup:hover>svg {
+    fill: #1a7090
+}
+
+main[role=application] #rgroup.opened {
+    overflow: visible
+}
+
+main[role=application] #rgroup {
+    height: 32px;
+    width: 100%
+}
+
+main[role=application] #transform {
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    width: 100%
+}
+
+main[role=application] #transform>svg {
+    display: block;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    right: 0;
+    bottom: 0
+}
+
+main[role=application] #transform:hover>svg {
+    fill: #1a7090
+}
+
+main[role=application] #transform.opened {
+    overflow: visible
+}
+
+main[role=application] #transform {
+    height: 32px;
+    width: 100%
+}
+
+main[role=application] li.opened li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+main[role=application] li.opened li menu {
+    width: 100%
+}
+
+main[role=application] li.opened button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1px 0;
+    padding: .3em .3em .3em 2em;
+    height: 1.7em;
+    font-size: 14px;
+    text-align: left
+}
+
+main[role=application] li.opened button:after,
+main[role=application] li.opened button:before {
+    padding-right: .4em;
+    font-size: 18px
+}
+
+main[role=application] li.opened button[disabled] {
+    background: inherit;
+    color: #baa
+}
+
+main[role=application] li.opened button kbd {
+    margin: 2.5px 0 0 10px;
+    display: inline-block
+}
+
+main[role=application] li.opened button>svg {
+    width: 20px;
+    height: 20px
+}
+
+main[role=application] li.opened button:hover {
+    -webkit-transition: .2s, ease-out, -webkit-transform;
+    transition: .2s, ease-out, -webkit-transform;
+    transition: transform, .2s, ease-out;
+    transition: transform, .2s, ease-out, -webkit-transform;
+    -webkit-transform: scale(none);
+    transform: scale(none);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    background-color: #eee
+}
+
+main[role=application] li.opened .selected button {
+    -webkit-transition: .2s, ease-out, -webkit-transform;
+    transition: .2s, ease-out, -webkit-transform;
+    transition: transform, .2s, ease-out;
+    transition: transform, .2s, ease-out, -webkit-transform;
+    -webkit-transform: scale(none);
+    transform: scale(none);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    background: #444;
+    color: #fff
+}
+
+main[role=application] li.opened .selected button>span {
+    color: #fff
+}
+
+main[role=application] li.opened .selected button>svg {
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 5
+}
+
+main[role=application] #bond-common,
+main[role=application] #bond-query,
+main[role=application] #bond-stereo {
+    position: static;
+    overflow: visible;
+    height: auto;
+    width: auto
+}
+
+main[role=application] #bond-common>svg,
+main[role=application] #bond-query>svg,
+main[role=application] #bond-stereo>svg {
+    display: none
+}
+
+main[role=application] #bond {
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    width: 100%
+}
+
+main[role=application] #bond>svg {
+    display: block;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    right: 0;
+    bottom: 0
+}
+
+main[role=application] #bond:hover>svg {
+    fill: #1a7090
+}
+
+main[role=application] #bond.opened {
+    overflow: visible
+}
+
+main[role=application] li.opened li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+main[role=application] li.opened li menu {
+    width: 100%
+}
+
+main[role=application] li.opened button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1px 0;
+    padding: .3em .3em .3em 2em;
+    height: 1.7em;
+    font-size: 12px;
+    text-align: left
+}
+
+main[role=application] li.opened button:after,
+main[role=application] li.opened button:before {
+    padding-right: .4em;
+    font-size: 16px
+}
+
+main[role=application] li.opened button[disabled] {
+    background: inherit;
+    color: #baa
+}
+
+main[role=application] li.opened button kbd {
+    margin: 2.5px 0 0 10px;
+    display: inline-block
+}
+
+main[role=application] li.opened button>svg {
+    width: 17px;
+    height: 17px
+}
+
+main[role=application] li.opened button:hover {
+    -webkit-transition: .2s, ease-out, -webkit-transform;
+    transition: .2s, ease-out, -webkit-transform;
+    transition: transform, .2s, ease-out;
+    transition: transform, .2s, ease-out, -webkit-transform;
+    -webkit-transform: scale(none);
+    transform: scale(none);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    background-color: #eee
+}
+
+main[role=application] li.opened .selected button {
+    -webkit-transition: .2s, ease-out, -webkit-transform;
+    transition: .2s, ease-out, -webkit-transform;
+    transition: transform, .2s, ease-out;
+    transition: transform, .2s, ease-out, -webkit-transform;
+    -webkit-transform: scale(none);
+    transform: scale(none);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    background: #444;
+    color: #fff
+}
+
+main[role=application] li.opened .selected button>span {
+    color: #fff
+}
+
+main[role=application] li.opened .selected button>svg {
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 5
+}
+
+main[role=application] #bond {
+    height: 32px;
+    width: 100%
+}
+
+main[role=application] #bond,
+main[role=application] #rgroup,
+main[role=application] #transform {
+    height: 32px;
+    width: 100%
+}
+
+main[role=application] body,
+main[role=application] form,
+main[role=application] select {
+    font-size: 11px
+}
+
+main[role=application] #canvas {
+    top: 37px;
+    left: 37px;
+    right: 37px;
+    bottom: 37px
+}
+
+main[role=application] #canvas .measure-log {
+    top: 37px;
+    right: 37px
+}
+
+main[role=application] #mainmenu,
+main[role=application] #template {
+    left: 37px;
+    right: 37px;
+    height: 32px
+}
+
+main[role=application] #elements,
+main[role=application] #toolbox {
+    top: 37px;
+    bottom: 37px;
+    width: 32px
+}
+
+main[role=application] [role=toolbar] button {
+    width: 24px;
+    height: 24px;
+    margin: 4px
+}
+
+main[role=application] [role=toolbar] button>svg {
+    position: absolute;
+    top: .1em;
+    left: .1em;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    fill: #333
+}
+
+main[role=application] #chiral-flag button {
+    width: 48px;
+    margin-left: 8px;
+    margin-right: 8px
+}
+
+main[role=application] #chiral-flag button>svg {
+    position: static;
+    left: 0;
+    top: 0;
+    width: 40px
+}
+
+main[role=application] #reaction,
+main[role=application] #select {
+    height: 32px;
+    width: 100%
+}
+
+main[role=application] li.opened>menu {
+    left: 37px
+}
+
+main[role=application] #atom button,
+main[role=application] #freq-atoms button {
+    font-size: 16px
+}
+
+main[role=application] #template-common+li {
+    margin-left: 15px;
+    border-left: 1px solid #ccc;
+    padding-left: 14px
+}
+
+main[role=application] .cellar {
+    display: none
+}
+
+main[role=application] .warning {
+    color: #f55
+}
+
+main[role=application] .warning:before {
+    content: '⚠ '
+}
+
+main[role=application] #analyse button:before {
+    padding: .2em 0 0 .2em
+}
+
+main[role=application] #check button:before {
+    padding: .2em 0 0 .2em
+}
+
+main[role=application] #cip button:before {
+    padding: .2em 0 0 .2em
+}
+
+main[role=application] #clean button:before {
+    padding: .2em 0 0 .2em
+}
+
+main[role=application] #generic-groups button:before {
+    padding: .2em 0 0 .2em
+}
+
+main[role=application] #layout button:before {
+    padding: .2em 0 0 .2em
+}
+
+main[role=application] #miew button:before {
+    padding: .2em 0 0 .2em
+}
+
+main[role=application] #reaction-arrow button:before {
+    padding: .2em 0 0 .2em
+}
+
+main[role=application] #reaction-automap button:before {
+    padding: .2em 0 0 .2em
+}
+
+main[role=application] #reaction-map button:before {
+    padding: .2em 0 0 .2em
+}
+
+main[role=application] #reaction-plus button:before {
+    padding: .2em 0 0 .2em
+}
+
+main[role=application] #reaction-unmap button:before {
+    padding: .2em 0 0 .2em
+}
+
+main[role=application] #recognize button:before {
+    padding: .2em 0 0 .2em
+}
+
+main[role=application] #rgroup-attpoints button:before {
+    padding: .2em 0 0 .2em
+}
+
+main[role=application] #rgroup-fragment button:before {
+    padding: .2em 0 0 .2em
+}
+
+main[role=application] #rgroup-label button:before {
+    padding: .2em 0 0 .2em
+}
+
+main[role=application] #template-lib button:before {
+    padding: .2em 0 0 .2em
+}
+
+/*# sourceMappingURL=ketcher.css.map */
