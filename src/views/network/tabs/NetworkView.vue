@@ -873,8 +873,24 @@ export default {
         .then(async (json) => {
           this.tb.taskId = json;
           this.createConfirm({ title: 'Success', content: 'Tree Builder job submitted successfully! Please visit results page for more details.', dialogProps: { width: "auto" } })
-          const output = await API.pollCeleryResult(json);
-          this.treeID = output.result.result_id
+          const output = json.output;
+          this.treeID = output.result.result_id;
+
+          // 转换并加载数据
+          const transformed = this.convertUDS(output.result.uds);
+
+          // 清空现有图数据，避免 ID 冲突
+          this.resultsStore.clearDataGraph();
+          this.resultsStore.clearDispGraph();
+
+          await this.resultsStore.addTreeBuilderResultToDataGraph(transformed.graph);
+
+          // 设置路径并调用 enumerateTrees
+          if (transformed.paths) {
+            this.resultsStore.setTrees(transformed.paths);
+            this.enumerateTrees();
+          }
+
           return output
         })
         .then(() => {
@@ -897,22 +913,22 @@ export default {
       }
     },
     async validatesmiles(smiles, iswarning) {
-      const json = await API.post("/api/rdkit/validate/", {
-        smiles: smiles,
-      });
-      if (!json["correct_syntax"]) {
-        if (iswarning) {
-          await this.createConfirm({ title: 'Action Unsuccessful', content: 'Invalid SMILES entered: Invalid Syntax', dialogProps: { width: "auto" } });
-        }
-        return false;
-      } else if (!json["valid_chem_name"]) {
-        if (iswarning) {
-          await this.createConfirm({ title: 'Action Unsuccessful', content: 'Invalid SMILES entered: Invalid Chemical Name', dialogProps: { width: "auto" } });
-        }
-        return false;
-      } else {
+      // const json = await API.post("/api/rdkit/validate/", {
+      //   smiles: smiles,
+      // });
+      // if (!json["correct_syntax"]) {
+      //   if (iswarning) {
+      //     await this.createConfirm({ title: 'Action Unsuccessful', content: 'Invalid SMILES entered: Invalid Syntax', dialogProps: { width: "auto" } });
+      //   }
+      //   return false;
+      // } else if (!json["valid_chem_name"]) {
+      //   if (iswarning) {
+      //     await this.createConfirm({ title: 'Action Unsuccessful', content: 'Invalid SMILES entered: Invalid Chemical Name', dialogProps: { width: "auto" } });
+      //   }
+      //   return false;
+      // } else {
         return true;
-      }
+      // }
     },
     async changeTarget() {
       if (this.resultsStore.dataGraph.nodes.length) {
@@ -1815,6 +1831,73 @@ export default {
       } else if (type === "sub") {
         this.pendingTasks -= 1;
       }
+    },
+    // 转换后端 UDS 数据格式为前端可用格式
+    convertUDS(resultObj) {
+      let transformResult = {};
+      transformResult["graph"] = {};
+      transformResult["paths"] = [];
+
+      // 处理路径数据
+      resultObj.pathways.forEach((edges, idx) => {
+        const uniqueIds = new Set();
+        edges.forEach((edge) => {
+          uniqueIds.add(edge.source);
+          uniqueIds.add(edge.target);
+        });
+
+        const nodes = Array.from(uniqueIds).map((id) => {
+          const smiles = resultObj.uuid2smiles[id] || "Unknown";
+          const nodeInfo = resultObj.node_dict[smiles];
+
+          return {
+            id,
+            smiles,
+            type: nodeInfo?.type || (smiles.includes(">>") ? "reaction" : "chemical"),
+          };
+        });
+
+        const transformedEdges = edges.map((edge) => ({
+          from: edge.source,
+          to: edge.target,
+        }));
+
+        let newPath = {
+          directed: true,
+          multigraph: false,
+          graph: resultObj.pathways_properties[idx],
+          nodes: nodes,
+          edges: transformedEdges,
+        };
+
+        transformResult["paths"].push(newPath);
+      });
+
+      // 处理图数据
+      const uniqueSmiles = new Set();
+      resultObj.graph.forEach((edge) => {
+        uniqueSmiles.add(edge.source);
+        uniqueSmiles.add(edge.target);
+      });
+
+      const nodes = Array.from(uniqueSmiles).map((smiles) => {
+        const nodeInfo = resultObj.node_dict[smiles];
+        if (!nodeInfo) {
+          console.warn(`Node not found in node_dict: ${smiles}`);
+          return null;
+        }
+        return { ...nodeInfo };
+      }).filter(node => node !== null);
+
+      transformResult["graph"] = {
+        directed: true,
+        multigraph: false,
+        graph: {},
+        nodes: nodes,
+        links: resultObj.graph,
+      };
+
+      return transformResult;
     },
     dayjs,
     num2str,

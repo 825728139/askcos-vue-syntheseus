@@ -547,7 +547,8 @@ export default {
     },
     computed: {
         trees() {
-            return this.allTrees
+            console.log('[TreeView] allTrees.length:', this.allTrees.length);
+            const filtered = this.allTrees
                 .filter((tree, index) => {
                     let logic = this.filterAny ? "some" : "every";
                     let result = true;
@@ -572,7 +573,10 @@ export default {
                         result &&= filterResult;
                     }
                     return result;
-                })
+                });
+            console.log('[TreeView] filtered trees.length:', filtered.length);
+            console.log('[TreeView] currentTreeId:', this.currentTreeId);
+            return filtered
                 .sort((aObj, bObj) => {
                     for (let { key, ascending } of this.treeSortInput) {
                         const a = aObj["graph"][key];
@@ -747,75 +751,186 @@ export default {
         },
         loadNodeLinkGraph(data, showDetail = true) {
             /* Load tree in node link format into visjs and add visualization related attributes. */
+            // console.log('[TreeView] loadNodeLinkGraph called, showDetail:', showDetail);
+
+            // 使用原始方式创建图
             const graph = new RetroGraph(data.nodes, data.edges);
+            // console.log('[TreeView] RetroGraph created, nodes:', graph.nodes.length, 'edges:', graph.edges.length);
 
             if (showDetail) {
                 /* For detail view, add extra visual attributes */
-                graph.nodes.update(
-                    data.nodes.map((node) => {
+                try {
+                    // console.log('[TreeView] Updating nodes for detail view...');
+                    const displayNodes = data.nodes.map((node) => {
+                        // console.log('[TreeView] Processing node:', node);
                         let dataNode = this.resultsStore.dataGraph.nodes.get(node["smiles"]);
+                        // console.log('[TreeView] dataNode from dataGraph:', dataNode);
                         if (node["type"] === "chemical") {
-                            return makeChemicalDisplayNode({
+                            if (!dataNode) {
+                                console.warn('[TreeView] No dataNode for chemical node:', node.smiles);
+                                // 回退：使用简单的图片节点
+                                return {
+                                    id: node["id"],
+                                    smiles: node["smiles"],
+                                    shape: "image",
+                                    image: getMolImageUrl(node["smiles"], false, true, undefined, true, undefined, false),
+                                    type: "chemical",
+                                };
+                            }
+                            // console.log('[TreeView] Calling makeChemicalDisplayNode');
+                            const displayNode = makeChemicalDisplayNode({
                                 id: node["id"],
                                 data: dataNode,
                                 target: this.target,
                                 align: this.settingsStore.ippSettings.alignNodeImagesToTarget,
                                 scale: false,
+                                svg: false,  // 使用 PNG 格式（vis.js 图像节点需要 PNG）
                             });
+                            // console.log('[TreeView] displayNode.image:', displayNode.image);
+                            return displayNode;
                         } else {
+                            if (!dataNode) {
+                                console.warn('[TreeView] No dataNode for reaction node:', node.smiles);
+                                // 回退：使用简单的圆圈
+                                return {
+                                    id: node["id"],
+                                    smiles: node["smiles"],
+                                    shape: "circle",
+                                    type: "reaction",
+                                };
+                            }
                             return makeReactionDisplayNode({
                                 id: node["id"],
                                 data: dataNode,
                                 detail: true,
                             });
                         }
-                    })
-                );
-                graph.edges.update(
-                    data.edges.map((edge) => {
-                        let from = graph.nodes.get(edge["from"]);
-                        let to = graph.nodes.get(edge["to"]);
-                        let reaction = from["type"] === "reaction" ? from["smiles"] : to["smiles"];
-                        let reactionObj = this.resultsStore.dataGraph.nodes.get(reaction);
-                        return makeDisplayEdge({
-                            id: edge["id"],
-                            from: edge["from"],
-                            to: edge["to"],
-                            value: reactionObj["averageModelScore"],
-                        });
-                    })
-                );
-            } else {
-                graph.nodes.update(
-                    data.nodes.map((node) => {
-                        if (node.type === "chemical") {
-                            return {
-                                id: node.id,
-                                image: getMolImageUrl(node.smiles),
-                                shape: "image",
-                            };
-                        } else {
-                            return {
-                                id: node.id,
-                                shape: "circle",
-                            };
-                        }
-                    })
-                );
+                    });
+
+                    graph.nodes.update(displayNodes);
+                    // console.log('[TreeView] Nodes updated successfully');
+
+                    // 关键调试：检查更新后的化学节点是否有 image 属性
+                    const updatedNodes = graph.nodes.get();
+                    const chemicalNodes = updatedNodes.filter(n => n.type === 'chemical');
+                    console.log('[TreeView] Updated chemical nodes count:', chemicalNodes.length);
+                    chemicalNodes.forEach(node => {
+                        console.log('[TreeView] Node - ID:', node.id.substring(0, 8), 'hasImage:', !!node.image, 'shape:', node.shape);
+                    });
+
+                    // console.log('[TreeView] Updating edges for detail view...');
+                    graph.edges.update(
+                        data.edges.map((edge) => {
+                            // console.log('[TreeView] Processing edge:', edge);
+                            let from = graph.nodes.get(edge["from"]);
+                            let to = graph.nodes.get(edge["to"]);
+                            let reaction = from["type"] === "reaction" ? from["smiles"] : to["smiles"];
+                            let reactionObj = this.resultsStore.dataGraph.nodes.get(reaction);
+                            return makeDisplayEdge({
+                                id: edge["id"],
+                                from: edge["from"],
+                                to: edge["to"],
+                                value: reactionObj["averageModelScore"],
+                            });
+                        })
+                    );
+                    // console.log('[TreeView] Edges updated successfully');
+                } catch (error) {
+                    console.error('[TreeView] Error in loadNodeLinkGraph:', error);
+                    console.error('[TreeView] Error stack:', error.stack);
+                }
             }
 
+            // console.log('[TreeView] loadNodeLinkGraph returning graph');
             return graph;
         },
-        buildTree() {
+        preloadImages(nodes) {
+            // 预加载所有化学节点的图片
+            console.log('[TreeView] preloadImages called with', nodes.length, 'nodes');
+            // console.log('[TreeView] All nodes:', nodes.map(n => ({
+            //     id: n.id,
+            //     type: n.type,
+            //     hasImage: !!n.image,
+            //     image: n.image,
+            //     smiles: n.smiles
+            // })));
+
+            const chemicalNodes = nodes.filter(n => n.type === 'chemical' && n.image);
+            const imageUrls = [...new Set(chemicalNodes.map(n => n.image))];  // 去重
+
+            // console.log('[TreeView] Found', chemicalNodes.length, 'chemical nodes with images');
+            // console.log('[TreeView] Preloading', imageUrls.length, 'unique images');
+            // console.log('[TreeView] Image URLs:', imageUrls);
+
+            const loadPromises = imageUrls.map(url => {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        // console.log('[TreeView] Image loaded:', url);
+                        resolve(url);
+                    };
+                    img.onerror = () => {
+                        console.warn('[TreeView] Image failed to load:', url);
+                        resolve(url);  // 即使失败也继续
+                    };
+                    img.src = url;
+                });
+            });
+
+            return Promise.all(loadPromises);
+        },
+        async buildTree() {
+            // console.log('[TreeView] buildTree called');
             if (!this.tabActive || !this.currentTree) {
+                // console.log('[TreeView] buildTree early return');
                 return;
             }
             this.clearSelection();
             const elem = this.$refs.graph;
+
             this.networkData = this.loadNodeLinkGraph(this.currentTree, true);
+            // console.log('[TreeView] networkData nodes:', this.networkData.nodes.length, 'edges:', this.networkData.edges.length);
+
+            // 直接从 this.currentTree 中提取化学节点预加载图片
+            const chemicalNodes = this.currentTree.nodes.filter(n => n.type === 'chemical');
+            // console.log('[TreeView] Found', chemicalNodes.length, 'chemical nodes in currentTree');
+
+            const imageUrls = chemicalNodes.map(node => {
+                const dataNode = this.resultsStore.dataGraph.nodes.get(node.smiles);
+                if (dataNode) {
+                    return getMolImageUrl(dataNode, false, true, undefined, true, undefined, false);
+                }
+                return null;
+            }).filter(url => url);
+
+            // 去重
+            const uniqueUrls = [...new Set(imageUrls)];
+            console.log('[TreeView] Preloading', uniqueUrls.length, 'images');
+
+            await Promise.all(uniqueUrls.map(url => {
+                return new Promise(resolve => {
+                    const img = new Image();
+                    img.onload = () => { resolve(); };
+                    img.onerror = () => { console.warn('[TreeView] Failed:', url); resolve(); };
+                    img.src = url;
+                });
+            }));
+
+            // console.log('[TreeView] Image preload completed');
+
             this.network = initializeNetwork(this.networkData, elem, true);
+            // console.log('[TreeView] network created:', !!this.network);
+
             this.network.on("selectNode", this.showNode);
             this.network.on("deselectNode", this.clearSelection);
+
+            // 额外的刷新确保图片显示
+            setTimeout(() => {
+                this.network.fit();
+                this.network.redraw();
+            }, 50);
+
+            // console.log('[TreeView] buildTree completed');
         },
         addSortField() {
             this.treeSortInput.push({
@@ -1160,8 +1275,11 @@ export default {
                 this.init();
             }
         },
-        trees() {
-            this.currentTreeId = 0;
+        trees(newVal) {
+            // 只在当前树索引超出范围时才重置
+            if (newVal.length > 0 && this.currentTreeId >= newVal.length) {
+                this.currentTreeId = newVal.length - 1;
+            }
         },
         treeListItems() {
             if (this.showListView) {

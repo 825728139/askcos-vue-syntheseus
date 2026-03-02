@@ -902,8 +902,8 @@ export const useResultsStore = defineStore("results", {
               // templateScore: node["template"]?.template_score ?? undefined,
               // templateIds: node["tforms"],
               // templateSets: node["tsources"],
-              precursors: node["smiles"].split("."),
-              precursorSmiles: node["smiles"],
+              precursors: node["smiles"] ? node["smiles"].split(".") : [],
+              precursorSmiles: node["smiles"] || "",
               // numExamples: node["num_examples"],
               // necessaryReagent:
               //   node["template"]?.necessary_reagent ?? undefined,

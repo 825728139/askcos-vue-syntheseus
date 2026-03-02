@@ -19,10 +19,12 @@ try {
 }
 
 const fastapiGatewayPtr = {
-  // Head Node target (only commented out for development and testing):
-  target: "http://3.16.7.29/",
-  // Testing/Development server target: 
-  // target: "http://173.48.230.6:9918/",  
+  // Syntheseus FastAPI 服务器目标
+  target: "http://192.168.100.108:5001/",
+  // 原 Askcos 后端（已注释）
+  // target: "http://3.16.7.29/",
+  // Testing/Development server target:
+  // target: "http://173.48.230.6:9918/",
   changeOrigin: true,
   ws: true,
   secure: false,
