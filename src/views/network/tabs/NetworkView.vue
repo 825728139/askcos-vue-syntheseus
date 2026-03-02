@@ -885,6 +885,14 @@ export default {
 
           await this.resultsStore.addTreeBuilderResultToDataGraph(transformed.graph);
 
+          // 找出目标分子（as_product > 0 且 as_reactant = 0 的化学物）
+          const targetNode = transformed.graph.nodes.find(node =>
+            node.type === 'chemical' && node.as_product > 0 && node.as_reactant === 0
+          );
+          if (targetNode) {
+            this.resultsStore.setTarget(targetNode.id);
+          }
+
           // 设置路径并调用 enumerateTrees
           if (transformed.paths) {
             this.resultsStore.setTrees(transformed.paths);

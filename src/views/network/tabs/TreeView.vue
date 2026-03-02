@@ -773,7 +773,7 @@ export default {
                                     id: node["id"],
                                     smiles: node["smiles"],
                                     shape: "image",
-                                    image: getMolImageUrl(node["smiles"], false, true, undefined, true, undefined, false),
+                                    image: getMolImageUrl(node["smiles"], false, true, undefined, true, undefined, false) + "&svg=false",
                                     type: "chemical",
                                 };
                             }
@@ -898,7 +898,7 @@ export default {
             const imageUrls = chemicalNodes.map(node => {
                 const dataNode = this.resultsStore.dataGraph.nodes.get(node.smiles);
                 if (dataNode) {
-                    return getMolImageUrl(dataNode, false, true, undefined, true, undefined, false);
+                    return getMolImageUrl(dataNode, false, true, undefined, true, undefined, false) + "&svg=false";
                 }
                 return null;
             }).filter(url => url);

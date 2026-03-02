@@ -194,7 +194,7 @@ const visjsOptionsTreeDefault = {
     hierarchical: {
       direction: "LR",
       levelSeparation: 250,
-      nodeSpacing: 175,
+      nodeSpacing: 320,
       sortMethod: "directed",
       shakeTowards: "roots",
     },

@@ -71,10 +71,10 @@ function getImageUrl({
     params.append("ppg", ppg);
   }
   if (asReactant !== undefined) {
-    params.append("as_reactant", asReactant);
+    params.append("as_reactant", asReactant > 0);
   }
   if (asProduct !== undefined) {
-    params.append("as_product", asProduct);
+    params.append("as_product", asProduct > 0);
   }
   if (size !== undefined) {
     params.append("size", size);
@@ -90,6 +90,7 @@ function getImageUrl({
  * @param {string} reference - Reference SMILES for alignment.
  * @param {boolean} annotate - Whether to annotate the image.
  * @param {number} size - Size of the image.
+ * @param {boolean} svg - Whether to return SVG format (default true).
  * @returns {string} The generated molecule image URL.
  */
 function getMolImageUrl(
@@ -98,7 +99,8 @@ function getMolImageUrl(
   transparent,
   reference,
   annotate,
-  size
+  size,
+  svg = true  // 新增参数，默认 true（保持向后兼容）
 ) {
   //  precursor can be
   //      1) a smiles string,
@@ -110,10 +112,12 @@ function getMolImageUrl(
       smiles: precursor,
       transparent,
       reference,
+      svg,
     });
   }
   if (annotate) {
-    return getImageUrl({
+    // console.log('[getMolImageUrl] annotate branch');
+    const url = getImageUrl({
       smiles: precursor.id,
       transparent,
       reference,
@@ -122,7 +126,10 @@ function getMolImageUrl(
       asReactant: precursor.asReactant,
       asProduct: precursor.asProduct,
       size,
+      svg,
     });
+    // console.log('[getMolImageUrl] generated URL:', url);
+    return url;
   }
   if (highlight && precursor.mappedSmiles && precursor.reactingAtoms) {
     return getImageUrl({
@@ -131,6 +138,7 @@ function getMolImageUrl(
       transparent,
       reactingAtoms: precursor.reactingAtoms,
       reference,
+      svg,
     });
   }
   if (highlight) { // tree builder -> view ipp
@@ -144,12 +152,13 @@ function getMolImageUrl(
       asReactant: precursor.asReactant,
       asProduct: precursor.asProduct,
       size,
+      svg,
     });
   }
 
 
   const smiles = precursor.smiles || precursor.precursorSmiles;
-  return smiles ? getImageUrl({ smiles, transparent, reference }) : "";
+  return smiles ? getImageUrl({ smiles, transparent, reference, svg }) : "";
 }
 
 export { getImageUrl, getMolImageUrl };
