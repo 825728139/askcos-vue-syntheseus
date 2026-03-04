@@ -70,11 +70,11 @@ function getImageUrl({
   if (ppg !== undefined) {
     params.append("ppg", ppg);
   }
-  if (asReactant !== undefined) {
-    params.append("as_reactant", asReactant > 0);
+  if (asReactant !== undefined && asReactant) {
+    params.append("as_reactant", true);
   }
-  if (asProduct !== undefined) {
-    params.append("as_product", asProduct > 0);
+  if (asProduct !== undefined && asProduct) {
+    params.append("as_product", true);
   }
   if (size !== undefined) {
     params.append("size", size);

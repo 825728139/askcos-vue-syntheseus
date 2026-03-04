@@ -1747,12 +1747,8 @@ export default {
           );
         },
         chemical_property_logic: (n) => {
-          const reacCheck =
-            !!n.asReactant &&
-            n.asReactant >= 5;
-          const prodCheck =
-            !!n.asProduct &&
-            n.asProduct >= 5;
+          const reacCheck = !!n.asReactant;
+          const prodCheck = !!n.asProduct;
           return reacCheck || prodCheck;
         },
       };
