@@ -868,6 +868,13 @@ export const useResultsStore = defineStore("results", {
     addTreeBuilderResultToDataGraph(data) {
       let templateIds = [];
       let chemicals = [];
+
+      // 调试日志
+      console.log('[DEBUG] addTreeBuilderResultToDataGraph - data.nodes count:', data.nodes.length);
+      console.log('[DEBUG] addTreeBuilderResultToDataGraph - data.links count:', data.links.length);
+      console.log('[DEBUG] addTreeBuilderResultToDataGraph - first 5 node IDs:', data.nodes.slice(0, 5).map(n => n.id));
+      console.log('[DEBUG] addTreeBuilderResultToDataGraph - first 5 links:', data.links.slice(0, 5));
+
       this.addDataNodes(
         data.nodes.map((node) => {
           if (node.type === "chemical") {
@@ -888,7 +895,7 @@ export const useResultsStore = defineStore("results", {
             if (node["tforms"]) {
               templateIds.push(...node["tforms"]);
             }
-            console.log(node)
+            // console.log(node)
             return {
               id: node["id"],
               modelMetadata: node["model_metadata"],
@@ -918,9 +925,15 @@ export const useResultsStore = defineStore("results", {
           }
         })
       );
+
+      // 调试日志
+      console.log('[DEBUG] addTreeBuilderResultToDataGraph - nodes added, total count:', this.dataGraph.nodes.length);
+      console.log('[DEBUG] addTreeBuilderResultToDataGraph - first 10 node IDs:', this.dataGraph.nodes.getIds().slice(0, 10));
+
       this.updateScscore(chemicals);
       this.apiTemplateCount(templateIds);
       this.apiTemplateSet(templateIds);
+
       this.addDataEdges(
         data.links.map((edge) => {
           return {
@@ -930,6 +943,10 @@ export const useResultsStore = defineStore("results", {
           };
         })
       );
+
+      // 调试日志
+      console.log('[DEBUG] addTreeBuilderResultToDataGraph - edges added, total count:', this.dataGraph.edges.length);
+      console.log('[DEBUG] addTreeBuilderResultToDataGraph - first 5 edges:', this.dataGraph.edges.get().slice(0, 5));
     },
     rerankPrecursors(parentSmiles) {
       // Update rank for nodes in dataGraph
@@ -1374,6 +1391,7 @@ function convertUDS(resultObj) {
       });
 
       const transformedEdges = edges.map((edge) => ({
+        id: uuidv4(),
         from: edge.source,
         to: edge.target,
       }));
@@ -1409,7 +1427,11 @@ function convertUDS(resultObj) {
     multigraph: false,
     graph: {},
     nodes: nodes,
-    links: resultObj.graph,
+    links: resultObj.graph.map((edge) => ({
+      id: uuidv4(),
+      source: edge.source,
+      target: edge.target,
+    })),
   };
 
   return transformResult;
@@ -1542,11 +1564,19 @@ async function getPrice(smiles, sources) {
 }
 
 async function getScscore(smiles) {
-  const url = "/api/scscore/batch/call-sync";
-  const json = await API.post(url, { smiles });
-  return Object.fromEntries(
-    smiles.map((smi) => [smi, { scscore: json["result"][smi] }])
-  );
+  try {
+    const url = "/api/scscore/batch/call-sync";
+    const json = await API.post(url, { smiles });
+    return Object.fromEntries(
+      smiles.map((smi) => [smi, { scscore: json["result"][smi] }])
+    );
+  } catch (error) {
+    // 如果 scscore API 不可用，返回默认值（scscore = 0）
+    console.warn('scscore API unavailable, using default values:', error.message);
+    return Object.fromEntries(
+      smiles.map((smi) => [smi, { scscore: 0 }])
+    );
+  }
 }
 
 // Utility to get core fragments for a chemical

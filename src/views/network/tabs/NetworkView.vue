@@ -885,13 +885,13 @@ export default {
 
           await this.resultsStore.addTreeBuilderResultToDataGraph(transformed.graph);
 
-          // 找出目标分子（as_product > 0 且 as_reactant = 0 的化学物）
-          const targetNode = transformed.graph.nodes.find(node =>
-            node.type === 'chemical' && node.as_product > 0 && node.as_reactant === 0
-          );
-          if (targetNode) {
-            this.resultsStore.setTarget(targetNode.id);
+          // 从 UDS 数据中获取根节点 SMILES（NIL_UUID 对应的 SMILES）
+          let targetSmiles = this.resultsStore.target;
+          const rootSmiles = output.result.uds.uuid2smiles["00000000-0000-0000-0000-000000000000"];
+          if (rootSmiles) {
+            targetSmiles = rootSmiles;
           }
+          this.resultsStore.setTarget(targetSmiles);
 
           // 设置路径并调用 enumerateTrees
           if (transformed.paths) {
@@ -1669,6 +1669,20 @@ export default {
     enumerateTrees() {
       this.currentTreeIndex = 0;
       this.updateTerminalNodes();
+
+      // 自定义验证函数：对于没有后继节点的化学节点，将其视为终端
+      const validationFunction = (node) => {
+        // 如果节点明确标记为 terminal，返回 true
+        if (node.terminal) return true;
+        // 如果是化学节点且没有后继节点，也视为终端
+        if (node.type === 'chemical') {
+          const nodeId = node.id || node.smiles;
+          const successors = this.resultsStore.dataGraph.getSuccessors(nodeId);
+          return !successors || successors.length === 0;
+        }
+        return false;
+      };
+
       let trees = getPaths({
         dataGraph: this.resultsStore.dataGraph,
         dispGraph: this.resultsStore.dispGraph,
@@ -1676,8 +1690,10 @@ export default {
         rootId: NIL_UUID,
         maxDepth: this.settingsStore.tree_builder_settings.build_tree_options.max_depth,
         maxTrees: this.settingsStore.tree_builder_settings.build_tree_options.max_trees,
+        validationFunction: validationFunction,
         dispOnly: this.useDispNodesOnly,
       });
+
       trees.forEach((tree) => this.calculateTreeMetadata(tree));
       this.trees = trees;
       this.treeViewEnabled = true;
@@ -1866,6 +1882,7 @@ export default {
         });
 
         const transformedEdges = edges.map((edge) => ({
+          id: uuidv4(),
           from: edge.source,
           to: edge.target,
         }));
@@ -1902,7 +1919,11 @@ export default {
         multigraph: false,
         graph: {},
         nodes: nodes,
-        links: resultObj.graph,
+        links: resultObj.graph.map((edge) => ({
+          id: uuidv4(),
+          source: edge.source,
+          target: edge.target,
+        })),
       };
 
       return transformResult;
